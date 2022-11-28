@@ -1,0 +1,26 @@
+package com.company;
+import java.util.*;
+    public class BubbleRec {
+        public static void main(String args[]){
+            Scanner sc=new Scanner(System.in);
+            int arr[]={23,44,1,5,77};
+            Bubble(arr,arr.length-1,0);
+            System.out.println(arr);
+        }
+        static void Bubble(int []arr,int r,int c){
+            if(r==0){
+                return;
+            }
+            if(c<r){
+                if(arr[c]>arr[c+1]){
+                    int temp=arr[c];
+                    arr[c]=arr[c+1];
+                    arr[c+1]=temp;
+                }
+                Bubble(arr,r,c+1);
+            }
+            else{
+                Bubble(arr,r-1,0);
+            }
+        }
+    }
